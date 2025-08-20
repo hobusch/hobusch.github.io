@@ -38,7 +38,21 @@
 </head>
 <body>
     <div class="terminal-line">
-        hobusch.net<span class="cursor" />
+        <span id="domain">hobusch.net</span><span class="cursor" />
     </div>
+
+    <script>
+        // Get the current domain and update the display
+        const domain = window.location.hostname;
+        const domainElement = document.getElementById('domain');
+
+        // Update the domain text based on the current URL
+        if (domain) {
+            domainElement.textContent = domain;
+        }
+
+        // Also update the page title to match the domain
+        document.title = domain;
+    </script>
 </body>
 </html>
